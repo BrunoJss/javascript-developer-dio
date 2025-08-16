@@ -3,30 +3,25 @@
 Objeto => Coleção dinâmica de chave e valor
 
 */
-const bruno = {
-    nome: "Bruno J. Cruz",
-    idade: 26,
-    descrever: function () {
-        console.log(`Meu nome é ${this.nome} e minha idade é ${this.idade} anos`)
-    }
-}
-
-bruno['nome'] = 'Bruno Cruz'
-
 
 class Pessoa {
+    //atributos
     nome;
     idade;
+    anoNascimento;
+
+    constructor(nome, idade){
+        this.nome = nome;
+        this.idade = idade;
+        this.anoNascimento = 2025 - idade
+    }
 
     descrever() {
-        return (`Meu nome é ${this.nome} e minha idade é ${this.idade} anos`)
+        console.log(`Meu nome é ${this.nome} e minha idade é ${this.idade} anos`)
 
     }
 }
 
-const bruno2 = new Pessoa()
-
-bruno2.nome = 'Bruno J Cruz'
-bruno2.idade = 26
-
-console.log(bruno2.descrever())
+const bruno = new Pessoa("Bruno J Cruz", 26)
+console.log(bruno)
+bruno.descrever()
