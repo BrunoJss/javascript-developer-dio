@@ -1,14 +1,14 @@
 function escrevaMeuNome(nome){
-    console.log("Meu nome é: " + nome)
+    return("Meu nome é: " + nome)
 }
 
 escrevaMeuNome("Bruno")
 
 function verificarIdade(idade){
     if(idade >= 18){
-        console.log("Maior")
+        console.log(escrevaMeuNome("Bruno") + " e sou Maior")
     }else{
-        console.log("Menor")
+        console.log(escrevaMeuNome("Bruno") + " e sou Menor")
     }
 }
 
