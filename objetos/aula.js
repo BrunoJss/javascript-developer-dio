@@ -11,10 +11,22 @@ const bruno = {
     }
 }
 
-console.log(bruno.nome)
-console.log(bruno.idade)
-console.log(bruno)
-
-bruno.descrever();
+bruno['nome'] = 'Bruno Cruz'
 
 
+class Pessoa {
+    nome;
+    idade;
+
+    descrever() {
+        return (`Meu nome é ${this.nome} e minha idade é ${this.idade} anos`)
+
+    }
+}
+
+const bruno2 = new Pessoa()
+
+bruno2.nome = 'Bruno J Cruz'
+bruno2.idade = 26
+
+console.log(bruno2.descrever())
