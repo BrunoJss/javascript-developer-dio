@@ -1,15 +1,17 @@
-const alunos = ['João', 'Vitor', "Marina"];
+const notas = []
 
-console.log(alunos[3])
+notas.push(5)
+notas.push(7)
+notas.push(8)
+notas.push(2)
+notas.push(5)
+notas.push(8)
 
-alunos.push('Renan');
+let soma = 0
 
-console.log(alunos[3])
+for(let i = 0; i < notas.length; i++){
+ soma += notas[i]
+}
 
-console.log("Ultimo item da lista: " + alunos.pop()) //retira da lista o ultimo elemento
 
-console.log(alunos)
-
-console.log("Primeiro item da lista: " + alunos.shift()) // retira o primeiro item da lista
-
-console.log(alunos)
+console.log(soma/notas.length)
