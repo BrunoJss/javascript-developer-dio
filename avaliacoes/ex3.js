@@ -20,18 +20,26 @@ O salario a ser transferido é calculado da seguinte maneira:
 */
 
 
-const {gets, print} = require('./ex3-funcoes');
+const { gets, print } = require('./ex3-funcoes');
 
 const salario = gets()
 const beneficios = gets()
-let liquido = beneficios;
 
-if(salario > 0 && salario < 1100){
-    liquido += salario * (1 - (5/100))
-}else if(salario > 1100 && salario < 2500){
-    liquido += salario * (1 - (10/100))
-}else{
-    liquido += salario * (1 - (15/100))
+function calcularDesconto(salario, porcentagem) {
+    return salario * (1 - (porcentagem / 100))
 }
 
-console.log(liquido)
+function pegarAliquota(salario) {
+    if (salario >= 0 && salario < 1100) {
+        return 5
+    } else if (salario >= 1100 && salario < 2500) {
+        return 10
+    } else {
+        return 15
+    }
+}
+
+const saldoReceber = beneficios + calcularDesconto(salario, pegarAliquota(salario))
+
+
+console.log(saldoReceber)
